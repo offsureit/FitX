@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--suppress ALL -->
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.stage.Screen?>
+<AnchorPane fx:id="splashPane" prefWidth="${screen.visualBounds.width}"
+            prefHeight="${screen.visualBounds.height}" style="-fx-background-color: #FFFFFF;"
+            xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="src.kioskfitnessapplication.SplashLoginController">
+    <fx:define>
+        <Screen fx:factory="getPrimary" fx:id="screen"/>
+    </fx:define>
+    <children>
+        <BorderPane layoutY="14.0" prefWidth="${screen.visualBounds.width}"
+                    prefHeight="${screen.visualBounds.height}" style="-fx-background-color: #FFFFFF;">
+            <center>
+                <BorderPane fx:id="borderPane" depthTest="DISABLE" maxHeight="500.0" maxWidth="500.0"
+                            style="-fx-background-color: #1E1E1E;" minHeight="500.0" minWidth="500.0" prefHeight="500.0"
+                            prefWidth="500.0" BorderPane.alignment="CENTER">
+                    <top>
+                        <VBox>
+                            <children>
+                                <StackPane fx:id="stackImage" prefHeight="150.0" prefWidth="400.0">
+                                    <children>
+                                        <ImageView fx:id="app_logo" pickOnBounds="true" preserveRatio="true"
+                                                   fitHeight="150.0"
+                                                   fitWidth="250.0">
+                                            <image>
+                                                <Image url="@images/logo_side_menu.png"/>
+                                            </image>
+                                            <viewport>
+                                                <Rectangle2D/>
+                                            </viewport>
+                                            <StackPane.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="30.0"/>
+                                            </StackPane.margin>
+                                        </ImageView>
+                                    </children>
+                                </StackPane>
+                                <Label text="Log In" textFill="#BDD13E" prefWidth="500.0" alignment="CENTER">
+                                </Label>
+                            </children>
+                        </VBox>
+                    </top>
+                    <bottom>
+                        <JFXButton fx:id="btnLogin" maxHeight="50.0" maxWidth="410.0" minHeight="50.0" minWidth="410.0"
+                                   onAction="#OnLoginClicked" prefHeight="50.0" prefWidth="410.0"
+                                   style="-fx-background-color: #BDD13E;" text="Log In" textFill="WHITE"
+                                   BorderPane.alignment="CENTER">
+                            <BorderPane.margin>
+                                <Insets left="25.0" right="25.0"/>
+                            </BorderPane.margin>
+                        </JFXButton>
+                    </bottom>
+                    <BorderPane.margin>
+                        <Insets/>
+                    </BorderPane.margin>
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+                    </padding>
+                    <center>
+                        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="132.0"
+                                       text="Username:" textFill="#FFFFFF">
+                                </Label>
+                                <JFXTextField fx:id="username" depthTest="DISABLE" focusTraversable="false"
+                                              maxHeight="40.0" maxWidth="400.0" minHeight="40.0" minWidth="400.0"
+                                              prefHeight="40.0" prefWidth="400.0" promptText="Username"
+                                              style="-fx-border-color: #ABABAB; -fx-border-radius: 3px; -jfx-focus-color: transparent; -fx-background-color: #FFFFFF;">
+                                    <VBox.margin>
+                                        <Insets left="25.0"/>
+                                    </VBox.margin>
+                                    <opaqueInsets>
+                                        <Insets/>
+                                    </opaqueInsets>
+                                    <padding>
+                                        <Insets left="10.0"/>
+                                    </padding>
+                                    <cursor>
+                                        <Cursor fx:constant="TEXT"/>
+                                    </cursor>
+                                </JFXTextField>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0"
+                                       prefHeight="43.0" prefWidth="132.0" text="Password:" textFill="#FFFFFF">
+                                    <VBox.margin>
+                                        <Insets top="10.0"/>
+                                    </VBox.margin>
+                                </Label>
+                                <JFXPasswordField fx:id="passwordField" layoutX="35.0" layoutY="53.0" maxHeight="40.0"
+                                                  maxWidth="400.0" minHeight="40.0" minWidth="400.0" prefHeight="40.0"
+                                                  prefWidth="400.0" promptText="Password"
+                                                  style="-fx-border-color: #ABABAB; -fx-border-radius: 3px; -jfx-focus-color: transparent; -fx-background-color: #FFFFFF;">
+                                    <opaqueInsets>
+                                        <Insets/>
+                                    </opaqueInsets>
+                                    <padding>
+                                        <Insets left="10.0"/>
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets left="25.0"/>
+                                    </VBox.margin>
+                                    <cursor>
+                                        <Cursor fx:constant="TEXT"/>
+                                    </cursor>
+                                </JFXPasswordField>
+                                <Label fx:id="invalid" alignment="CENTER" maxHeight="20.0" minHeight="20.0"
+                                       prefHeight="20.0" prefWidth="399.0" text="Invalid username or password"
+                                       textFill="RED" visible="false">
+                                    <VBox.margin>
+                                        <Insets left="25.0" top="10.0"/>
+                                    </VBox.margin>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </center>
+                </BorderPane>
+            </center>
+            <top>
+                <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#OnExitClicked" pickOnBounds="true"
+                           preserveRatio="true" BorderPane.alignment="TOP_RIGHT">
+                    <image>
+                        <Image url="@images/exit.png"/>
+                    </image>
+                    <BorderPane.margin>
+                        <Insets bottom="50.0" left="50.0" right="50.0" top="30.0"/>
+                    </BorderPane.margin>
+                </ImageView>
+            </top>
+        </BorderPane>
+    </children>
+</AnchorPane>

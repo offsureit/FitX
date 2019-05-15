@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--suppress ALL -->
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<AnchorPane fx:id="drawerMenuParent" onMouseClicked="#OnMenuClicked" prefHeight="1080.0" prefWidth="250.0"
+            style="-fx-background-color: #343434;" xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.kioskfitnessapplication.DrawerMenuController">
+    <children>
+        <BorderPane blendMode="LIGHTEN" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #343434;">
+            <top>
+                <ImageView fitHeight="22.0" fitWidth="32.0" onMouseClicked="#OnMenuClose" pickOnBounds="true"
+                           preserveRatio="true" BorderPane.alignment="CENTER_LEFT">
+                    <image>
+                        <Image url="@images/menu_white.png"/>
+                    </image>
+                    <BorderPane.margin>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+                    </BorderPane.margin>
+                </ImageView>
+            </top>
+            <center>
+                <VBox alignment="TOP_CENTER" prefHeight="-Infinity" prefWidth="-Infinity" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-text-fill: #FFFFFF;"
+                               text="Log In as Admin" textAlignment="CENTER" textFill="WHITE" VBox.vgrow="ALWAYS">
+                            <VBox.margin>
+                                <Insets left="40.0"/>
+                            </VBox.margin>
+                        </Label>
+                        <JFXButton fx:id="loginButton" onMouseClicked="#OnLogoutClicked" prefWidth="100.0"
+                                   style="-fx-background-color: #EC3642;" text="Logout" textAlignment="CENTER"
+                                   textFill="WHITE" wrapText="true">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="30.0" right="10.0" top="20.0"/>
+                            </VBox.margin>
+                        </JFXButton>
+
+                        <JFXButton fx:id="closeButton" onMouseClicked="#OnCloseClicked" prefWidth="100.0"
+                                   style="-fx-background-color: #BDD13E;" text="Close" textAlignment="CENTER"
+                                   textFill="WHITE" wrapText="true">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="30.0" right="10.0" top="10.0"/>
+                            </VBox.margin>
+                        </JFXButton>
+                    </children>
+                </VBox>
+            </center>
+        </BorderPane>
+    </children>
+
+</AnchorPane>

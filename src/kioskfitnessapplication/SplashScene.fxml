@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.stage.Screen?>
+<AnchorPane fx:id="splashAnchorPane" prefWidth="${screen.visualBounds.width}"
+            prefHeight="${screen.visualBounds.height}" style="-fx-background-color: #322F31;"
+            xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="src.kioskfitnessapplication.SplashSceneController">
+    <fx:define>
+        <Screen fx:factory="getPrimary" fx:id="screen"/>
+    </fx:define>
+    <StackPane prefWidth="${screen.visualBounds.width}"
+               prefHeight="${screen.visualBounds.height}" style="-fx-background-color: #1E1E1E;">
+
+        <children>
+            <ImageView fitHeight="-Infinity" fitWidth="-Infinity" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@images/splash_logo.png"/>
+                </image>
+            </ImageView>
+        </children>
+    </StackPane>
+
+</AnchorPane>

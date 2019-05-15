@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox fx:id="hBox" prefHeight="100.0" prefWidth="302.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+      <VBox prefHeight="100.0" prefWidth="302.0">
+         <children>
+              <Label fx:id="label1" alignment="CENTER" prefHeight="100.0" prefWidth="302.0" textFill="WHITE">
+                  <font>
+                      <Font name="System Bold Italic" size="18.0" />
+                  </font>
+              </Label>
+            <Line endX="302.0" fill="#f2f2f2" startX="-100.0" stroke="#f2f2f2" strokeWidth="0.1">
+               <VBox.margin>
+                  <Insets bottom="0" />
+               </VBox.margin>
+            </Line>
+         </children>
+      </VBox>
+    </children>
+</HBox>

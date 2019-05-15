@@ -1,0 +1,7 @@
+.active {
+    -fx-text-fill: forestgreen;
+}
+
+.active:selected {
+    -fx-text-fill: lawngreen;
+}

@@ -1,0 +1,4 @@
+#labelcell:filled:selected:focused, #labelcell:filled:selected {
+    -fx-text-fill: #fff;
+        -fx-text-color: #fff;
+}

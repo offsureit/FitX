@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_kioskfitnessapplication" default="compile.module.kioskfitnessapplication">
+  <dirname property="module.kioskfitnessapplication.basedir" file="${ant.file.module_kioskfitnessapplication}"/>
+  
+  <property name="module.jdk.home.kioskfitnessapplication" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.kioskfitnessapplication" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.kioskfitnessapplication" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.kioskfitnessapplication" value="-encoding UTF-8 -source 1.8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="kioskfitnessapplication.output.dir" value="${module.kioskfitnessapplication.basedir}/out/production/KioskFitnessApplication"/>
+  <property name="kioskfitnessapplication.testoutput.dir" value="${module.kioskfitnessapplication.basedir}/out/test/KioskFitnessApplication"/>
+  
+  <path id="kioskfitnessapplication.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="kioskfitnessapplication.module.production.classpath">
+    <path refid="${module.jdk.classpath.kioskfitnessapplication}"/>
+    <pathelement location="${basedir}/libs/jfoenix-8.0.1.jar"/>
+    <pathelement location="${basedir}/libs/jcodec-javase-0.2.2.jar"/>
+    <pathelement location="${basedir}/libs/jcodec-0.2.2.jar"/>
+  </path>
+  
+  <path id="kioskfitnessapplication.runtime.production.module.classpath">
+    <pathelement location="${kioskfitnessapplication.output.dir}"/>
+    <pathelement location="${basedir}/libs/jfoenix-8.0.1.jar"/>
+    <pathelement location="${basedir}/libs/jcodec-javase-0.2.2.jar"/>
+    <pathelement location="${basedir}/libs/jcodec-0.2.2.jar"/>
+  </path>
+  
+  <path id="kioskfitnessapplication.module.classpath">
+    <path refid="${module.jdk.classpath.kioskfitnessapplication}"/>
+    <pathelement location="${kioskfitnessapplication.output.dir}"/>
+    <pathelement location="${basedir}/libs/jfoenix-8.0.1.jar"/>
+    <pathelement location="${basedir}/libs/jcodec-javase-0.2.2.jar"/>
+    <pathelement location="${basedir}/libs/jcodec-0.2.2.jar"/>
+  </path>
+  
+  <path id="kioskfitnessapplication.runtime.module.classpath">
+    <pathelement location="${kioskfitnessapplication.testoutput.dir}"/>
+    <pathelement location="${kioskfitnessapplication.output.dir}"/>
+    <pathelement location="${basedir}/libs/jfoenix-8.0.1.jar"/>
+    <pathelement location="${basedir}/libs/jcodec-javase-0.2.2.jar"/>
+    <pathelement location="${basedir}/libs/jcodec-0.2.2.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.kioskfitnessapplication">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.kioskfitnessapplication">
+    <patternset refid="excluded.from.module.kioskfitnessapplication"/>
+  </patternset>
+  
+  <path id="kioskfitnessapplication.module.sourcepath">
+    <dirset dir="${module.kioskfitnessapplication.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.kioskfitnessapplication" depends="compile.module.kioskfitnessapplication.production,compile.module.kioskfitnessapplication.tests" description="Compile module KioskFitnessApplication"/>
+  
+  <target name="compile.module.kioskfitnessapplication.production" depends="register.custom.compilers" description="Compile module KioskFitnessApplication; production classes">
+    <mkdir dir="${kioskfitnessapplication.output.dir}"/>
+    <javac2 destdir="${kioskfitnessapplication.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.kioskfitnessapplication}/javac">
+      <compilerarg line="${compiler.args.kioskfitnessapplication}"/>
+      <bootclasspath refid="kioskfitnessapplication.module.bootclasspath"/>
+      <classpath refid="kioskfitnessapplication.module.production.classpath"/>
+      <src refid="kioskfitnessapplication.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.kioskfitnessapplication"/>
+    </javac2>
+    
+    <copy todir="${kioskfitnessapplication.output.dir}">
+      <fileset dir="${module.kioskfitnessapplication.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.kioskfitnessapplication.tests" depends="register.custom.compilers,compile.module.kioskfitnessapplication.production" description="compile module KioskFitnessApplication; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.kioskfitnessapplication" description="cleanup module">
+    <delete dir="${kioskfitnessapplication.output.dir}"/>
+    <delete dir="${kioskfitnessapplication.testoutput.dir}"/>
+  </target>
+</project>

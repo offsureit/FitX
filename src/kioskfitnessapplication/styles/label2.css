@@ -1,0 +1,5 @@
+.label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+    -fx-padding: 2 15 2 15;
+}

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.stage.Screen?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="src.kioskfitnessapplication.LogoutAlertController"
+           style="-fx-background-color: rgba(30,30,30,0.7);"
+           fx:id="logoutPane"
+           prefWidth="${screen.visualBounds.width}"
+           prefHeight="${screen.visualBounds.height}">
+    <fx:define>
+        <Screen fx:factory="getPrimary" fx:id="screen"/>
+    </fx:define>
+    <BorderPane
+            fx:id="alert"
+            style="-fx-background-color: #1E1E1E;" prefWidth="500.0" prefHeight="250.0"
+            minWidth="500.0" maxWidth="500.0" minHeight="250.0" maxHeight="250.0">
+        <center>
+            <VBox alignment="CENTER">
+                <Label text="Enter Password" textFill="#BDD13E" maxHeight="40.0" maxWidth="300.0"
+                       minHeight="40.0" minWidth="300.0"
+                       prefHeight="40.0" prefWidth="300.0"
+                       alignment="CENTER">
+                    <font>
+                        <Font size="25.0"/>
+                    </font>
+                </Label>
+                <JFXPasswordField fx:id="password" depthTest="DISABLE" focusTraversable="false"
+                                  maxHeight="40.0" maxWidth="300.0" minHeight="40.0" minWidth="300.0"
+                                  prefHeight="40.0" prefWidth="300.0" promptText="Password"
+                                  style="-fx-border-color: #ABABAB; -fx-border-radius: 3px; -jfx-focus-color: transparent; -fx-background-color: #FFFFFF;">
+                    <VBox.margin>
+                        <Insets left="25.0" right="25.0" top="25.0"/>
+                    </VBox.margin>
+                    <opaqueInsets>
+                        <Insets/>
+                    </opaqueInsets>
+                    <padding>
+                        <Insets left="10.0"/>
+                    </padding>
+                    <cursor>
+                        <Cursor fx:constant="TEXT"/>
+                    </cursor>
+                </JFXPasswordField>
+
+                <Label fx:id="invalid" alignment="CENTER" maxHeight="20.0" minHeight="20.0"
+                       prefHeight="20.0" prefWidth="399.0" text="Invalid password"
+                       textFill="RED" visible="false">
+                    <VBox.margin>
+                        <Insets left="25.0" top="10.0"/>
+                    </VBox.margin>
+                </Label>
+
+                <HBox alignment="CENTER">
+                    <JFXButton onMouseClicked="#OnLogoutClicked" prefWidth="100.0" fx:id="btnText"
+                               style="-fx-background-color: #EC3642;" text="Logout" textAlignment="CENTER"
+                               textFill="WHITE" wrapText="true">
+                        <HBox.margin>
+                            <Insets bottom="10.0" left="20.0" right="20.0" top="20.0"/>
+                        </HBox.margin>
+                        <font>
+                            <Font size="20.0"/>
+                        </font>
+                    </JFXButton>
+
+                    <JFXButton onMouseClicked="#OnExitClicked" prefWidth="100.0"
+                               style="-fx-background-color: #BDD13E;" text="Cancel" textAlignment="CENTER"
+                               textFill="WHITE" wrapText="true">
+                        <HBox.margin>
+                            <Insets bottom="10.0" left="20.0" right="20.0" top="20.0"/>
+                        </HBox.margin>
+                        <font>
+                            <Font size="20.0"/>
+                        </font>
+                    </JFXButton>
+                </HBox>
+            </VBox>
+        </center>
+    </BorderPane>
+</StackPane>

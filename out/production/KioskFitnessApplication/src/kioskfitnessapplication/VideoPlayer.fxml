@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.stage.Screen?>
+<StackPane fx:id="video" style="-fx-background-color: #343434;" xmlns="http://javafx.com/javafx/8.0.121"
+           xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.kioskfitnessapplication.VideoPlayerController">
+    <fx:define>
+        <Screen fx:factory="getPrimary" fx:id="screen"/>
+    </fx:define>
+    <children>
+        <MediaView fx:id="mediaView" fitHeight="${screen.visualBounds.height}" fitWidth="${screen.visualBounds.width}"/>
+        <BorderPane prefWidth="${screen.visualBounds.width}"
+                    prefHeight="${screen.visualBounds.height}">
+            <top>
+                <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#onCloseVideoViewClicked"
+                           pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1.0;"
+                           BorderPane.alignment="TOP_RIGHT">
+                    <image>
+                        <Image url="@images/close.png"/>
+                    </image>
+                    <BorderPane.margin>
+                        <Insets right="50.0" top="30.0"/>
+                    </BorderPane.margin>
+                </ImageView>
+            </top>
+
+            <bottom>
+                <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#onPlayPauseVideoViewClicked"
+                           pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1.0;"
+                           fx:id="play_pause"
+                           BorderPane.alignment="BOTTOM_RIGHT">
+                    <image>
+                        <Image url="@images/pause_icon_black.png"/>
+                    </image>
+                    <BorderPane.margin>
+                        <Insets right="10.0" bottom="10.0"/>
+                    </BorderPane.margin>
+                </ImageView>
+            </bottom>
+        </BorderPane>
+    </children>
+</StackPane>
